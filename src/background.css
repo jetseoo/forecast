@@ -1,0 +1,27 @@
+.cloudy-bg {
+  background-image: url('./assets/backgrounds/cloudy.jpg');
+  background-blend-mode: overlay;
+}
+
+.partly-cloudy-day-bg {
+  background-image: url('./assets/backgrounds/partly-cloudy-day.jpg');
+  background-position: 50% 40%;
+  background-blend-mode: overlay;
+}
+
+.clear-day-bg {
+  background-image: url('./assets/backgrounds/clear-day.jpg');
+  background-position: 50% 60%;
+  background-blend-mode: overlay;
+}
+
+.snow-bg {
+  background-image: url('./assets/backgrounds/snow.jpg');
+  background-blend-mode: overlay;
+}
+
+.rain-bg {
+  background-image: url('./assets/backgrounds/rain.jpg');
+  background-position: 50% 60%;
+  background-blend-mode: overlay;
+}

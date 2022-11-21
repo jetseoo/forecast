@@ -1,0 +1,84 @@
+p {
+  margin: 0;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.city,
+.country {
+  margin: 0;
+}
+
+.city {
+  font-size: 40px;
+}
+
+.country {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.current {
+  display: flex;
+  align-items: flex-end;
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position-y: 30px;
+}
+
+.description {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: darkgray;
+}
+
+.right {
+  display: flex;
+  align-items: flex-end;
+}
+
+.sunrise {
+  margin-right: 40px;
+}
+
+.feels-like {
+  margin-bottom: 5px;
+}
+
+.sunrise,
+.sunset {
+  display: flex;
+}
+
+.sunrise::before {
+  content: url('../assets/icons/sunrize.svg');
+  width: 20px;
+}
+
+.sunset::before {
+  content: url('../assets/icons/sunset.svg');
+  width: 20px;
+}

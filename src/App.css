@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  color: #eee;
+}
+
+#root {
+  background-color: #2a2b33;
+}
+
+.App {
+  margin: auto;
+  padding-top: 80px;
+  height: 100vh;
+  max-width: 1125px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.main {
+  max-height: 335px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.secondary {
+  display: flex;
+}
+
+.secondary-left {
+  display: flex;
+  flex: 2 0 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+
+.details {
+  display: flex;
+  width: 48%;
+}
+
+.secondary-right {
+  flex: 1 0 0;
+}

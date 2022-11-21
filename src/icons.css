@@ -1,0 +1,19 @@
+.rain {
+  background-image: url('./assets/icons/rain.svg');
+}
+
+.partly-cloudy-day {
+  background-image: url('./assets/icons/partly-cloudy-day.svg');
+}
+
+.cloudy {
+  background-image: url('./assets/icons/cloud.svg');
+}
+
+.clear-day {
+  background-image: url('./assets/icons/sun.svg');
+}
+
+.snow {
+  background-image: url('./assets/icons/snow.svg');
+}

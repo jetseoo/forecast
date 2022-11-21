@@ -1,0 +1,35 @@
+.details {
+  position: relative;
+}
+
+.details .details-content::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-position: 100% 70%;
+  background-size: 40%;
+}
+
+.details:nth-child(1) .details-content::after {
+  background-image: url('../assets/icons/graph.svg');
+  background-size: 25%;
+  background-position: 90% 60%;
+}
+
+.details:nth-child(2) .details-content::after {
+  background-image: url('../assets/icons/wind.svg');
+}
+
+.details:nth-child(3) .details-content::after {
+  background-image: url('../assets/icons/rain.svg');
+}
+
+.details:nth-child(4) .details-content::after {
+  background-image: url('../assets/icons/sun.svg');
+}

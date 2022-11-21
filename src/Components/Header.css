@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input {
+  min-width: 310px;
+  padding: 10px;
+  color: #888;
+  background-color: #2f343f;
+  border: none;
+  border-radius: 7px;
+}
+
+.name {
+  color: #bbb;
+  font-size: 36px;
+}
