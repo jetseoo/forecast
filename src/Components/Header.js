@@ -1,29 +1,22 @@
-import { useRef } from 'react';
-import { useState } from 'react';
-
+import { useContext } from 'react';
+import { DataContext } from './DataContextProvider';
 import './Header.css';
 
-const Header = ({ changeAdress }) => {
-  const [newAdress, setNewAdress] = useState('');
-  const inpEl = useRef();
+const Header = () => {
+  const { data, cityChangeHandler } = useContext(DataContext);
 
   return (
     <header className="header">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          changeAdress(newAdress);
+          cityChangeHandler(e.target[0].value);
         }}
       >
-        <input
-          ref={inpEl}
-          className="input"
-          placeholder="Enter a city..."
-          onChange={() => setNewAdress(inpEl.current.value.trim())}
-        />
+        <input defaultValue={data.address} className="city-input" />
       </form>
 
-      <strong className="name">OhMyWeather</strong>
+      <strong className="app-name">OhMyWeather</strong>
     </header>
   );
 };

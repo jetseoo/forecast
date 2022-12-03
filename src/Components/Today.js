@@ -1,21 +1,25 @@
 import './Today.css';
 import '../icons.css';
 
-const Today = ({ data }) => {
-  const today = data.days[0];
+import { useContext } from 'react';
+import { DataContext } from './DataContextProvider';
+
+const Today = () => {
+  const data = useContext(DataContext);
+  const today = data.data.days[0];
 
   return (
     <div className="main-info">
       <div className="left">
         <div className="place">
-          <h1 className="city">{data.address}</h1>
-          <h2 className="country">{data.resolvedAddress}</h2>
+          <h1 className="city">{data.data.address}</h1>
+          <h2 className="country">{data.data.resolvedAddress}</h2>
         </div>
 
         <div className="temperature">
-          <p className="current">
+          <p className="current semi-bold">
             {Math.round(today.temp)}
-            <sup>&deg;</sup>
+            <sup className="degree">&deg;</sup>
             <span className={`icon ${today.icon}`}></span>
           </p>
 

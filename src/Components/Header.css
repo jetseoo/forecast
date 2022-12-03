@@ -5,7 +5,7 @@
   margin-bottom: 30px;
 }
 
-.input {
+.city-input {
   min-width: 310px;
   padding: 10px;
   color: #888;
@@ -14,7 +14,7 @@
   border-radius: 7px;
 }
 
-.name {
+.app-name {
   color: #bbb;
   font-size: 36px;
 }

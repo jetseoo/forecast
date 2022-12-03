@@ -1,18 +1,21 @@
-import Card from './UI/Card.js';
-
 import './Tomorrow.css';
 import '../icons.css';
 import '../background.css';
 
-const Tomorrow = ({ data }) => {
-  const tomorrow = data.days[1];
+import Card from './UI/Card.js';
+import { useContext } from 'react';
+import { DataContext } from './DataContextProvider';
+
+const Tomorrow = () => {
+  const data = useContext(DataContext);
+  const tomorrow = data.data.days[1];
 
   return (
     <Card className={`tomorrow ${tomorrow.icon}-bg`}>
       <h3 className="details-heading">Tomorrow</h3>
 
       <div className="temperature">
-        <p className="temp">
+        <p className="temp semi-bold">
           {Math.round(tomorrow.temp)}
           <sup>&deg;</sup>
           <span className={`icon ${tomorrow.icon}`}></span>

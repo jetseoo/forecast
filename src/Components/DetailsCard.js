@@ -1,88 +1,34 @@
 import './DetailsCard.css';
+import { NAMES_MAPS, convertWindDir } from '../API';
 
-const DetailsCard = (props) => {
-  const today = props.data.days[0];
+import { useContext } from 'react';
+import { DataContext } from './DataContextProvider';
 
-  const getCorrectName = (incomeData) => {
-    switch (incomeData) {
-      case 'windspeed':
-        return 'speed';
-
-      case 'windgust':
-        return 'gust';
-
-      case 'winddir':
-        return 'direction';
-
-      case 'precip':
-        return 'precipitation';
-
-      case 'precipprob':
-        return 'chance';
-
-      case 'precipcover':
-        return 'cover';
-
-      case 'uvindex':
-        return 'UV-index';
-
-      case 'solarradiation':
-        return 'radiation';
-
-      case 'solarenergy':
-        return 'solar energy';
-
-      default:
-        return incomeData;
-    }
-  };
-
-  const convertWindDir = (deg) => {
-    if (deg > 0 && deg <= 22.5) {
-      return 'N';
-    } else if (deg > 22.5 && deg <= 67.5) {
-      return 'NE';
-    } else if (deg > 67.5 && deg <= 112.5) {
-      return 'E';
-    } else if (deg > 112.5 && deg <= 157.5) {
-      return 'SE';
-    } else if (deg > 157.5 && deg <= 202.5) {
-      return 'S';
-    } else if (deg > 202.5 && deg <= 247.5) {
-      return 'SW';
-    } else if (deg > 247.5 && deg <= 292.5) {
-      return 'W';
-    } else if (deg > 292.5 && deg <= 337.5) {
-      return 'NW';
-    } else if (deg > 337.5 && deg <= 360) {
-      return 'N';
-    } else {
-      return 'N/A';
-    }
-  };
+const DetailsCard = ({ heading, blockId }) => {
+  const data = useContext(DataContext);
+  const today = data.data.days[0];
 
   return (
     <div className="details-content">
-      <h3 className="details-heading">{props.heading}</h3>
+      <h3 className="details-heading semi-bold">{heading}</h3>
 
-      <div className="line">
-        <p>{getCorrectName(props.detailOne)}</p>
-        <p>{today[props.detailOne]}</p>
-      </div>
+      {NAMES_MAPS.map((obj, idx) => {
+        if (idx !== +blockId - 1) return '';
 
-      <div className="line">
-        <p>{getCorrectName(props.detailTwo)}</p>
-        <p>{today[props.detailTwo]}</p>
-      </div>
+        const pairs = Object.entries(obj);
 
-      <div className="line">
-        <p>{getCorrectName(props.detailThree)}</p>
-        <p>
-          {props.detailThree === 'winddir'
-            ? convertWindDir(today[props.detailThree])
-            : today[props.detailThree]}
-        </p>
-      </div>
+        return pairs.map((pair) => {
+          const [prop, name] = pair;
+          const value = name === 'direction' ? convertWindDir(today[prop]) : today[prop];
+
+          return (
+            <div className="line" key={name}>
+              <p>{name}</p>
+              <p>{value}</p>
+            </div>
+          );
+        });
+      })}
     </div>
   );
 };

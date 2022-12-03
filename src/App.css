@@ -3,8 +3,16 @@
   color: #eee;
 }
 
+p {
+  margin: 0;
+}
+
 #root {
   background-color: #2a2b33;
+}
+
+.semi-bold {
+  font-weight: 600;
 }
 
 .App {

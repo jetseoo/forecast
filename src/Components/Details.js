@@ -3,47 +3,23 @@ import DetailsCard from './DetailsCard';
 
 import './Details.css';
 
-export const Details = ({ data }) => {
+export const Details = () => {
   return (
     <div className="secondary-left">
       <Card className="details">
-        <DetailsCard
-          data={data}
-          heading="Details"
-          detailOne={'humidity'}
-          detailTwo={'pressure'}
-          detailThree={'visibility'}
-        />
+        <DetailsCard heading="Details" blockId="1" />
       </Card>
 
       <Card className="details">
-        <DetailsCard
-          data={data}
-          heading="Wind"
-          detailOne={'windspeed'}
-          detailTwo={'windgust'}
-          detailThree={'winddir'}
-        />
+        <DetailsCard heading="Wind" blockId="2" />
       </Card>
 
       <Card className="details">
-        <DetailsCard
-          data={data}
-          heading={data.days[0].preciptype ? data.days[0].preciptype : 'No precipitation'}
-          detailOne={'precip'}
-          detailTwo={'precipprob'}
-          detailThree={'precipcover'}
-        />
+        <DetailsCard heading="Precipitation" blockId="3" />
       </Card>
 
       <Card className="details">
-        <DetailsCard
-          data={data}
-          heading="Sun"
-          detailOne={'uvindex'}
-          detailTwo={'solarradiation'}
-          detailThree={'solarenergy'}
-        />
+        <DetailsCard heading="Sun" blockId="4" />
       </Card>
     </div>
   );

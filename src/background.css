@@ -1,5 +1,6 @@
 .cloudy-bg {
   background-image: url('./assets/backgrounds/cloudy.jpg');
+  background-position: 50% 40%;
   background-blend-mode: overlay;
 }
 
@@ -17,6 +18,7 @@
 
 .snow-bg {
   background-image: url('./assets/backgrounds/snow.jpg');
+  background-position: 50% 60%;
   background-blend-mode: overlay;
 }
 
