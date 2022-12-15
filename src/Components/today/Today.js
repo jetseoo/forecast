@@ -1,8 +1,8 @@
 import './Today.css';
-import '../icons.css';
+import '../../css/icons.css';
 
 import { useContext } from 'react';
-import { DataContext } from './DataContextProvider';
+import { DataContext } from '../DataContextProvider';
 
 const Today = () => {
   const data = useContext(DataContext);
@@ -18,16 +18,16 @@ const Today = () => {
 
         <div className="temperature">
           <p className="current semi-bold">
-            {Math.round(today.temp)}
+            {today.temp}
             <sup className="degree">&deg;</sup>
             <span className={`icon ${today.icon}`}></span>
           </p>
 
           <p className="description">{today.description}</p>
 
-          <p className="feels-like">Feels like {Math.round(today.feelslike)}</p>
+          <p className="feels-like">Feels like {today.feelslike}</p>
           <p className="min-max">
-            Min {Math.round(today.tempmin)} &nbsp;&nbsp; Max {Math.round(today.tempmax)}
+            Min {today.tempmin} &nbsp;&nbsp; Max {today.tempmax}
           </p>
         </div>
       </div>

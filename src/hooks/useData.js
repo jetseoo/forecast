@@ -1,34 +1,44 @@
 import { useEffect, useState } from 'react';
-import { dayUsedProprerties, getFetchUrl } from '../API';
+import { dayUsedProperties, getFetchUrl } from '../API';
 
-export const useData = () => {
-  const [data, updateData] = useState(null);
-
-  useEffect(() => {
-    const dataFetch = async () => {
-      const response = await fetch(getFetchUrl(data?.address));
-      const newData = await response.json();
-
-      updateData(newData);
-    };
-    dataFetch();
-  }, [data?.address]);
-
+const getResultData = (data) => {
   const resultData = {};
 
   if (data !== null) {
     resultData.address = data.address;
     resultData.resolvedAddress = data.resolvedAddress;
 
-    resultData.days = data.days.map((day) => {
+    // days[0] & days[1] - only today and tomorrow data needed
+    resultData.days = [data.days[0], data.days[1]].map((day) => {
       const dayInfo = {};
 
-      dayUsedProprerties.forEach((prop) => {
-        dayInfo[prop] = day[prop];
+      dayUsedProperties.forEach((prop) => {
+        if (prop === 'temp' || prop === 'feelslike' || prop === 'tempmin' || prop === 'tempmax') {
+          dayInfo[prop] = Math.round(day[prop]);
+        } else {
+          dayInfo[prop] = day[prop];
+        }
       });
+
       return dayInfo;
     });
   }
+  return resultData;
+};
 
-  return [resultData, updateData];
+export const useData = () => {
+  const [data, updateData] = useState(null);
+  const [city, setCity] = useState(data?.address || 'Batumi');
+
+  useEffect(() => {
+    const dataFetch = async () => {
+      const response = await fetch(getFetchUrl(city));
+      const newData = await response.json();
+
+      updateData(getResultData(newData));
+    };
+    dataFetch();
+  }, [city]);
+
+  return [data, setCity];
 };

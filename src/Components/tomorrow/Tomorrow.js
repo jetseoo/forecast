@@ -1,10 +1,10 @@
-import './Tomorrow.css';
-import '../icons.css';
-import '../background.css';
-
-import Card from './UI/Card.js';
+import Card from '../UI/Card.js';
 import { useContext } from 'react';
-import { DataContext } from './DataContextProvider';
+import { DataContext } from '../DataContextProvider';
+
+import './Tomorrow.css';
+import '../../css/icons.css';
+import '../../css/background.css';
 
 const Tomorrow = () => {
   const data = useContext(DataContext);
@@ -16,13 +16,13 @@ const Tomorrow = () => {
 
       <div className="temperature">
         <p className="temp semi-bold">
-          {Math.round(tomorrow.temp)}
+          {tomorrow.temp}
           <sup>&deg;</sup>
           <span className={`icon ${tomorrow.icon}`}></span>
         </p>
 
         <p className="min-max">
-          Min {Math.round(tomorrow.tempmin)} &nbsp;&nbsp;&nbsp; Max {Math.round(tomorrow.tempmax)}
+          Min {tomorrow.tempmin} &nbsp;&nbsp;&nbsp; Max {tomorrow.tempmax}
         </p>
       </div>
     </Card>

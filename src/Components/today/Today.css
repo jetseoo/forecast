@@ -73,11 +73,11 @@
 }
 
 .sunrise::before {
-  content: url('../assets/icons/sunrize.svg');
+  content: url('../../assets/icons/sunrize.svg');
   width: 20px;
 }
 
 .sunset::before {
-  content: url('../assets/icons/sunset.svg');
+  content: url('../../assets/icons/sunset.svg');
   width: 20px;
 }

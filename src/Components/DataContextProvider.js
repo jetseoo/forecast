@@ -4,16 +4,7 @@ import { useData } from '../hooks/useData';
 export const DataContext = createContext(null);
 
 export const DataContextProvider = ({ children }) => {
-  const [data, setData] = useData();
+  const [data, setCity] = useData();
 
-  const cityChangeHandler = (city) => {
-    const newData = { ...data };
-    newData.address = city;
-
-    setData(newData);
-  };
-
-  return (
-    <DataContext.Provider value={{ data, cityChangeHandler }}>{children}</DataContext.Provider>
-  );
+  return <DataContext.Provider value={{ data, setCity }}>{children}</DataContext.Provider>;
 };

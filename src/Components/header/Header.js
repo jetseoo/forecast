@@ -1,18 +1,19 @@
 import { useContext } from 'react';
-import { DataContext } from './DataContextProvider';
+import { DataContext } from '../DataContextProvider';
+
 import './Header.css';
 
 const Header = () => {
-  const { data, cityChangeHandler } = useContext(DataContext);
+  const { data, setCity } = useContext(DataContext);
+
+  const onCityChange = (e) => {
+    e.preventDefault();
+    setCity(e.target[0].value);
+  };
 
   return (
     <header className="header">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          cityChangeHandler(e.target[0].value);
-        }}
-      >
+      <form onSubmit={onCityChange}>
         <input defaultValue={data.address} className="city-input" />
       </form>
 

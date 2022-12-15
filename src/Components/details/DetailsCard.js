@@ -1,8 +1,9 @@
 import './DetailsCard.css';
-import { NAMES_MAPS, convertWindDir } from '../API';
+import { NAMES_MAPS, convertWindDir } from '../../API';
+import PropTypes from 'prop-types';
 
 import { useContext } from 'react';
-import { DataContext } from './DataContextProvider';
+import { DataContext } from '../DataContextProvider';
 
 const DetailsCard = ({ heading, blockId }) => {
   const data = useContext(DataContext);
@@ -13,12 +14,12 @@ const DetailsCard = ({ heading, blockId }) => {
       <h3 className="details-heading semi-bold">{heading}</h3>
 
       {NAMES_MAPS.map((obj, idx) => {
-        if (idx !== +blockId - 1) return '';
+        if (idx !== blockId - 1) return '';
+        // NAMES_MAPS array contains objects with weather details data.
+        // blockId specifies which object is going to be taken from this array
+        // otherwise each details block would contain all the properties and be the same
 
-        const pairs = Object.entries(obj);
-
-        return pairs.map((pair) => {
-          const [prop, name] = pair;
+        return Object.entries(obj).map(([prop, name]) => {
           const value = name === 'direction' ? convertWindDir(today[prop]) : today[prop];
 
           return (
@@ -31,6 +32,11 @@ const DetailsCard = ({ heading, blockId }) => {
       })}
     </div>
   );
+};
+
+DetailsCard.propTypes = {
+  heading: PropTypes.string,
+  blockId: PropTypes.number,
 };
 
 export default DetailsCard;

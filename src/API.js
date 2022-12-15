@@ -1,5 +1,4 @@
-export const getFetchUrl = (location) => {
-  if (!location) location = 'Batumi';
+export const getFetchUrl = (location = 'Batumi') => {
   return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=events&key=ALXSB6AVTSV9VTPZ6XRTWBH5E&contentType=json`;
 };
 
@@ -11,30 +10,32 @@ export const NAMES_MAPS = [
 ];
 
 export const convertWindDir = (deg) => {
-  if (deg > 0 && deg <= 22.5) {
-    return 'N';
-  } else if (deg > 22.5 && deg <= 67.5) {
-    return 'NE';
-  } else if (deg > 67.5 && deg <= 112.5) {
-    return 'E';
-  } else if (deg > 112.5 && deg <= 157.5) {
-    return 'SE';
-  } else if (deg > 157.5 && deg <= 202.5) {
-    return 'S';
-  } else if (deg > 202.5 && deg <= 247.5) {
-    return 'SW';
-  } else if (deg > 247.5 && deg <= 292.5) {
-    return 'W';
-  } else if (deg > 292.5 && deg <= 337.5) {
-    return 'NW';
-  } else if (deg > 337.5 && deg <= 360) {
-    return 'N';
-  } else {
-    return 'N/A';
+  switch (true) {
+    case deg <= 22.5:
+      return 'N';
+    case deg <= 67.5:
+      return 'NE';
+    case deg <= 112.5:
+      return 'E';
+    case deg <= 157.5:
+      return 'SE';
+    case deg <= 202.5:
+      return 'S';
+    case deg <= 247.5:
+      return 'SW';
+    case deg <= 292.5:
+      return 'W';
+    case deg <= 337.5:
+      return 'NW';
+    case deg <= 360:
+      return 'N';
+
+    default:
+      return 'N/A';
   }
 };
 
-export const dayUsedProprerties = [
+export const dayUsedProperties = [
   'temp',
   'icon',
   'feelslike',
