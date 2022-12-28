@@ -1,0 +1,75 @@
+.week {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0;
+  margin-bottom: 0;
+}
+
+.week-heading {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.week-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.weekday {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weekday:not(:last-child) {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+.weekday-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.weekday-day {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  min-width: 20px;
+  color: grey;
+}
+
+.weekday-weekday {
+  display: inline-flex;
+  min-width: 50px;
+  font-weight: 600;
+}
+
+.weekday-icon {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+.weekday-temprate {
+  display: flex;
+  align-items: center;
+}
+
+.weekday-temp {
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+.weekday-temps {
+  min-width: 70px;
+  color: grey;
+}

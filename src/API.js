@@ -36,6 +36,7 @@ export const convertWindDir = (deg) => {
 };
 
 export const dayUsedProperties = [
+  'datetime',
   'temp',
   'icon',
   'feelslike',

@@ -15,7 +15,7 @@ const Tomorrow = () => {
       <h3 className="details-heading">Tomorrow</h3>
 
       <div className="temperature">
-        <p className="temp semi-bold">
+        <p className="temp">
           {tomorrow.temp}
           <sup>&deg;</sup>
           <span className={`icon ${tomorrow.icon}`}></span>

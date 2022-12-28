@@ -8,8 +8,7 @@ const getResultData = (data) => {
     resultData.address = data.address;
     resultData.resolvedAddress = data.resolvedAddress;
 
-    // days[0] & days[1] - only today and tomorrow data needed
-    resultData.days = [data.days[0], data.days[1]].map((day) => {
+    resultData.days = data.days.map((day) => {
       const dayInfo = {};
 
       dayUsedProperties.forEach((prop) => {

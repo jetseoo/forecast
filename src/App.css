@@ -8,26 +8,21 @@ p {
 }
 
 #root {
-  background-color: #2a2b33;
-}
-
-.semi-bold {
-  font-weight: 600;
+  background: rgb(48, 49, 50);
+  background: linear-gradient(135deg, rgba(48, 49, 50, 1) 0%, rgba(17, 17, 17, 1) 100%);
 }
 
 .App {
   margin: auto;
   padding-top: 80px;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1125px;
   vertical-align: middle;
   text-align: center;
 }
 
 .main {
-  max-height: 335px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
 }
 
 .secondary {
@@ -45,8 +40,4 @@ p {
 .details {
   display: flex;
   width: 48%;
-}
-
-.secondary-right {
-  flex: 1 0 0;
 }

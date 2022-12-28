@@ -7,6 +7,7 @@ import Tomorrow from './Components/tomorrow/Tomorrow.js';
 import { DataContext } from './Components/DataContextProvider.js';
 
 import './App.css';
+import Week from './Components/week/week.js';
 
 function App() {
   const { data } = useContext(DataContext);
@@ -19,16 +20,14 @@ function App() {
     <div className="App">
       <Header />
 
-      <Card className={`main ${data.days[0].icon}-bg`}>
+      <main className="main">
         <Today />
-      </Card>
+        <Tomorrow />
+      </main>
 
       <section className="secondary">
         <Details />
-
-        <div className="secondary-right">
-          <Tomorrow />
-        </div>
+        <Week />
       </section>
     </div>
   );

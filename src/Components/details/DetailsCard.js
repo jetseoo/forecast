@@ -11,7 +11,7 @@ const DetailsCard = ({ heading, blockId }) => {
 
   return (
     <div className="details-content">
-      <h3 className="details-heading semi-bold">{heading}</h3>
+      <h3 className="details-heading">{heading}</h3>
 
       {NAMES_MAPS.map((obj, idx) => {
         if (idx !== blockId - 1) return '';

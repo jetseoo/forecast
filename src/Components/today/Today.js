@@ -1,15 +1,16 @@
-import './Today.css';
-import '../../css/icons.css';
-
 import { useContext } from 'react';
 import { DataContext } from '../DataContextProvider';
+import Card from '../UI/Card';
+
+import './Today.css';
+import '../../css/icons.css';
 
 const Today = () => {
   const data = useContext(DataContext);
   const today = data.data.days[0];
 
   return (
-    <div className="main-info">
+    <Card className={`today main-info ${today.icon}-bg`}>
       <div className="left">
         <div className="place">
           <h1 className="city">{data.data.address}</h1>
@@ -17,7 +18,7 @@ const Today = () => {
         </div>
 
         <div className="temperature">
-          <p className="current semi-bold">
+          <p className="current">
             {today.temp}
             <sup className="degree">&deg;</sup>
             <span className={`icon ${today.icon}`}></span>
@@ -36,7 +37,7 @@ const Today = () => {
         <p className="sunrise">{today.sunrise.slice(0, 5)}</p>
         <p className="sunset">{today.sunset.slice(0, 5)}</p>
       </div>
-    </div>
+    </Card>
   );
 };
 
