@@ -3,7 +3,7 @@ import { DataContext } from '../DataContextProvider';
 
 import './Header.css';
 
-const Header = () => {
+export const Header = () => {
   const { data, setCity } = useContext(DataContext);
 
   const onCityChange = (e) => {
@@ -21,5 +21,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

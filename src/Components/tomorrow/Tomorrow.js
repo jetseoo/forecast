@@ -1,4 +1,4 @@
-import Card from '../UI/Card.js';
+import { Card } from '../UI';
 import { useContext } from 'react';
 import { DataContext } from '../DataContextProvider';
 
@@ -6,7 +6,7 @@ import './Tomorrow.css';
 import '../../css/icons.css';
 import '../../css/background.css';
 
-const Tomorrow = () => {
+export const Tomorrow = () => {
   const data = useContext(DataContext);
   const tomorrow = data.data.days[1];
 
@@ -28,5 +28,3 @@ const Tomorrow = () => {
     </Card>
   );
 };
-
-export default Tomorrow;

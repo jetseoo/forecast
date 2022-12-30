@@ -1,33 +1,25 @@
 import React, { useContext } from 'react';
-import Card from '../UI/Card';
+import { Card } from '../UI';
 import { DataContext } from '../DataContextProvider';
 
 import './week.css';
 
-const Week = () => {
+export const Week = () => {
   const data = useContext(DataContext);
-
-  const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-
-    return {
-      weekday: date.toLocaleDateString('en-US', { weekday: 'short' }),
-      day: date.toLocaleDateString('en-US', { day: '2-digit' }),
-    };
-  };
 
   return (
     <Card className="week">
       <h3 className="week-heading">Week</h3>
       <ul className="week-list">
-        {data.data.days.slice(1, 8).map((day) => {
+        {data.data.days.slice(0, 7).map((day) => {
+          console.log(day);
           return (
-            <li className="weekday" key={day.datetime}>
+            <li className="weekday" key={day.datetime.date}>
               <div className="weekday-wrapper">
                 <span className={`weekday-icon ${day.icon}`}></span>
                 <p>
-                  <span className="weekday-weekday">{formatDate(day.datetime).weekday}</span>
-                  <span className="weekday-day">{formatDate(day.datetime).day}</span>
+                  <span className="weekday-weekday">{day.datetime.weekday}</span>
+                  <span className="weekday-day">{day.datetime.day}</span>
                 </p>
               </div>
 
@@ -49,5 +41,3 @@ const Week = () => {
     </Card>
   );
 };
-
-export default Week;

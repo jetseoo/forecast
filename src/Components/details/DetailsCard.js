@@ -1,11 +1,12 @@
-import './DetailsCard.css';
 import { NAMES_MAPS, convertWindDir } from '../../API';
 import PropTypes from 'prop-types';
 
 import { useContext } from 'react';
 import { DataContext } from '../DataContextProvider';
 
-const DetailsCard = ({ heading, blockId }) => {
+import './DetailsCard.css';
+
+export const DetailsCard = ({ heading, blockId }) => {
   const data = useContext(DataContext);
   const today = data.data.days[0];
 
@@ -38,5 +39,3 @@ DetailsCard.propTypes = {
   heading: PropTypes.string,
   blockId: PropTypes.number,
 };
-
-export default DetailsCard;

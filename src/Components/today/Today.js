@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { DataContext } from '../DataContextProvider';
-import Card from '../UI/Card';
+import { Card } from '../UI';
 
 import './Today.css';
 import '../../css/icons.css';
 
-const Today = () => {
+export const Today = () => {
   const data = useContext(DataContext);
   const today = data.data.days[0];
 
@@ -40,5 +40,3 @@ const Today = () => {
     </Card>
   );
 };
-
-export default Today;

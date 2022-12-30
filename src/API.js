@@ -1,5 +1,12 @@
 export const getFetchUrl = (location = 'Batumi') => {
-  return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=events&key=ALXSB6AVTSV9VTPZ6XRTWBH5E&contentType=json`;
+  const periodStart = new Date();
+  const formattedPeriodStart = periodStart.toISOString().split('T')[0];
+
+  const periodEnd = new Date();
+  periodEnd.setDate(periodStart.getDate() + 6);
+  const formattedPeriodEnd = periodEnd.toISOString().split('T')[0];
+
+  return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${formattedPeriodStart}/${formattedPeriodEnd}?unitGroup=metric&include=events&key=ALXSB6AVTSV9VTPZ6XRTWBH5E&contentType=json`;
 };
 
 export const NAMES_MAPS = [

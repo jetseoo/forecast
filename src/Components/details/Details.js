@@ -1,5 +1,5 @@
-import Card from '../UI/Card';
-import DetailsCard from './DetailsCard';
+import { Card } from '../UI';
+import { DetailsCard } from './DetailsCard';
 
 import './Details.css';
 
@@ -24,5 +24,3 @@ export const Details = () => {
     </div>
   );
 };
-
-export default Details;

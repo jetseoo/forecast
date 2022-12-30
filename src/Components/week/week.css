@@ -18,7 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: -webkit-fill-available;
+  height: -moz-available;
   width: -webkit-fill-available;
+  width: -moz-available;
   padding: 0;
   margin: 0;
   list-style: none;

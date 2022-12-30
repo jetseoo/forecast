@@ -17,6 +17,16 @@ const getResultData = (data) => {
         } else {
           dayInfo[prop] = day[prop];
         }
+
+        if (prop === 'datetime') {
+          const date = new Date(day[prop]);
+
+          dayInfo[prop] = {
+            date: day[prop],
+            weekday: date.toLocaleDateString('en-US', { weekday: 'short' }),
+            day: date.toLocaleDateString('en-US', { day: '2-digit' }),
+          };
+        }
       });
 
       return dayInfo;
@@ -33,6 +43,8 @@ export const useData = () => {
     const dataFetch = async () => {
       const response = await fetch(getFetchUrl(city));
       const newData = await response.json();
+
+      console.log(newData);
 
       updateData(getResultData(newData));
     };

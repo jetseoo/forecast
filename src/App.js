@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import Header from './Components/header/Header.js';
-import Card from './Components/UI/Card.js';
-import Today from './Components/today/Today.js';
-import Details from './Components/details/Details';
-import Tomorrow from './Components/tomorrow/Tomorrow.js';
+import { Header } from './Components/header';
+import { Card } from './Components/UI';
+import { Today } from './Components/today';
+import { Details } from './Components/details';
+import { Tomorrow } from './Components/tomorrow';
+import { Week } from './Components/week';
 import { DataContext } from './Components/DataContextProvider.js';
 
 import './App.css';
-import Week from './Components/week/week.js';
 
 function App() {
   const { data } = useContext(DataContext);
