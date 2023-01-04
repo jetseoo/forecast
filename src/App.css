@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  color: #eee;
+}
+
+p {
+  margin: 0;
+}
+
+#root {
+  background: rgb(48, 49, 50);
+  background: linear-gradient(135deg, rgba(48, 49, 50, 1) 0%, rgba(17, 17, 17, 1) 100%);
+}
+
+.App {
+  margin: auto;
+  padding-top: 80px;
+  min-height: 100vh;
+  max-width: 1125px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+}
+
+.secondary {
+  display: flex;
+}
+
+.secondary-left {
+  display: flex;
+  flex: 2 0 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+
+.details {
+  display: flex;
+  width: 48%;
+}

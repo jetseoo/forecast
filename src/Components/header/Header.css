@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.city-input {
+  min-width: 310px;
+  padding: 10px;
+  color: #888;
+  background-color: #3a3c3d;
+  border: none;
+  border-radius: 7px;
+}
+
+.app-name {
+  color: #bbb;
+  font-size: 36px;
+}
