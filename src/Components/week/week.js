@@ -12,7 +12,6 @@ export const Week = () => {
       <h3 className="week-heading">Week</h3>
       <ul className="week-list">
         {data.data.days.slice(0, 7).map((day) => {
-          console.log(day);
           return (
             <li className="weekday" key={day.datetime.date}>
               <div className="weekday-wrapper">

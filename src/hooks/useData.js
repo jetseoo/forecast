@@ -44,8 +44,6 @@ export const useData = () => {
       const response = await fetch(getFetchUrl(city));
       const newData = await response.json();
 
-      console.log(newData);
-
       updateData(getResultData(newData));
     };
     dataFetch();
