@@ -43,7 +43,6 @@
 .weekday-day {
   display: inline-flex;
   justify-content: flex-end;
-  margin-right: 10px;
   min-width: 20px;
   color: grey;
 }
@@ -74,4 +73,56 @@
 .weekday-temps {
   min-width: 70px;
   color: grey;
+}
+
+@media screen and (max-width: 1023px) {
+  .week {
+    flex: unset;
+    width: 48%;
+  }
+
+  .week-list {
+    justify-content: space-evenly;
+  }
+
+  .weekday {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(35, 35, 35);
+  }
+
+  .weekday:not(:last-child) {
+    border-bottom: none;
+  }
+
+  .weekday-weekday {
+    min-width: 40px;
+  }
+
+  .weekday-temp {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .week {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .weekday:not(:last-child) {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+  }
+
+  .weekday {
+    padding: unset;
+    border-radius: unset;
+    background-color: unset;
+  }
+
+  .weekday-weekday {
+    display: inline-flex;
+    min-width: 50px;
+    font-weight: 600;
+  }
 }

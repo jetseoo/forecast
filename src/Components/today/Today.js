@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { DataContext } from '../DataContextProvider';
 import { Card } from '../UI';
+import { Tooltip } from '../UI';
 
 import './Today.css';
 import '../../css/icons.css';
@@ -26,10 +27,11 @@ export const Today = () => {
 
           <p className="description">{today.description}</p>
 
-          <p className="feels-like">Feels like {today.feelslike}</p>
-          <p className="min-max">
-            Min {today.tempmin} &nbsp;&nbsp; Max {today.tempmax}
-          </p>
+          <div className="more-temps">
+            <p>Feels like&nbsp;{today.feelslike}</p>
+            <p>Min&nbsp;{today.tempmin}</p>
+            <p>Max&nbsp;{today.tempmax}</p>
+          </div>
         </div>
       </div>
 
@@ -37,6 +39,30 @@ export const Today = () => {
         <p className="sunrise">{today.sunrise.slice(0, 5)}</p>
         <p className="sunset">{today.sunset.slice(0, 5)}</p>
       </div>
+
+      <Tooltip buttonClass="mob-info-btn">
+        <div>
+          <div className="mob-more-temps">
+            <p>
+              <span className="mob-info-descr">Feels like</span>
+              <span className="mob-info-temp">{today.feelslike}</span>
+            </p>
+            <p>
+              <span className="mob-info-descr">Min</span>
+              <span className="mob-info-temp">{today.tempmin}</span>
+            </p>
+            <p>
+              <span className="mob-info-descr">Max</span>
+              <span className="mob-info-temp">{today.tempmax}</span>
+            </p>
+          </div>
+
+          <div className="mob-sun">
+            <p className="sunrise">{today.sunrise.slice(0, 5)}</p>
+            <p className="sunset">{today.sunset.slice(0, 5)}</p>
+          </div>
+        </div>
+      </Tooltip>
     </Card>
   );
 };

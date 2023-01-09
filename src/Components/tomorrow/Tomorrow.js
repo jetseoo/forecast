@@ -25,6 +25,7 @@ export const Tomorrow = () => {
           Min {tomorrow.tempmin} &nbsp;&nbsp;&nbsp; Max {tomorrow.tempmax}
         </p>
       </div>
+      <p className="description">{tomorrow.description}</p>
     </Card>
   );
 };

@@ -44,6 +44,7 @@ export const convertWindDir = (deg) => {
 
 export const dayUsedProperties = [
   'datetime',
+  'description',
   'temp',
   'icon',
   'feelslike',
@@ -64,3 +65,5 @@ export const dayUsedProperties = [
   'solarradiation',
   'solarenergy',
 ];
+
+export const propsToRound = ['temp', 'feelslike', 'tempmin', 'tempmax'];

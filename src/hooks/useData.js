@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { dayUsedProperties, getFetchUrl } from '../API';
+import { getFetchUrl, dayUsedProperties, propsToRound } from '../API';
 
 const getResultData = (data) => {
   const resultData = {};
@@ -12,7 +12,7 @@ const getResultData = (data) => {
       const dayInfo = {};
 
       dayUsedProperties.forEach((prop) => {
-        if (prop === 'temp' || prop === 'feelslike' || prop === 'tempmin' || prop === 'tempmax') {
+        if (propsToRound.includes(prop)) {
           dayInfo[prop] = Math.round(day[prop]);
         } else {
           dayInfo[prop] = day[prop];

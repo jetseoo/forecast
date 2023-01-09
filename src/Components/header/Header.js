@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <form onSubmit={onCityChange}>
+      <form className="header-form" onSubmit={onCityChange}>
         <input defaultValue={data.address} className="city-input" />
       </form>
 

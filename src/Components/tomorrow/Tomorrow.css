@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-end;
   flex: 1 0 0;
   background-size: cover;
 }
@@ -17,4 +18,12 @@
   width: 70px;
   height: inherit;
   background-position-y: 0;
+}
+
+.tomorrow .description {
+  margin-bottom: 0;
+}
+
+.min-max {
+  margin-bottom: 10px;
 }
