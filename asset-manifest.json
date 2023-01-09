@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/forecast/static/css/main.d44c7c74.css",
-    "main.js": "/forecast/static/js/main.1bc05f01.js",
+    "main.css": "/forecast/static/css/main.72bc403f.css",
+    "main.js": "/forecast/static/js/main.143d15c3.js",
     "static/media/cloudy.jpg": "/forecast/static/media/cloudy.dba0b95babb352eaf800.jpg",
     "static/media/clear-day.jpg": "/forecast/static/media/clear-day.b4c896126c0cbbe1b227.jpg",
     "static/media/rain.jpg": "/forecast/static/media/rain.6ed6b6c75ba9b7aa62a0.jpg",
     "static/media/snow.jpg": "/forecast/static/media/snow.0f94746c1fa55bbec41d.jpg",
     "static/media/partly-cloudy-day.jpg": "/forecast/static/media/partly-cloudy-day.04dffb6a05a7baa36279.jpg",
+    "static/media/info.svg": "/forecast/static/media/info.0ccbd39954208021115b.svg",
     "static/media/snow.svg": "/forecast/static/media/snow.34a11c1269e5d2bd0988.svg",
     "static/media/graph.svg": "/forecast/static/media/graph.766cd95a20137137221d.svg",
     "static/media/sunrize.svg": "/forecast/static/media/sunrize.29781269116bd35f0517.svg",
@@ -17,11 +18,11 @@
     "static/media/partly-cloudy-day.svg": "/forecast/static/media/partly-cloudy-day.b02014c0192c52a2b098.svg",
     "static/media/cloud.svg": "/forecast/static/media/cloud.3d82b4cbf171a292738b.svg",
     "static/media/sun.svg": "/forecast/static/media/sun.c8b63169ee96cade77ac.svg",
-    "main.d44c7c74.css.map": "/forecast/static/css/main.d44c7c74.css.map",
-    "main.1bc05f01.js.map": "/forecast/static/js/main.1bc05f01.js.map"
+    "main.72bc403f.css.map": "/forecast/static/css/main.72bc403f.css.map",
+    "main.143d15c3.js.map": "/forecast/static/js/main.143d15c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.d44c7c74.css",
-    "static/js/main.1bc05f01.js"
+    "static/css/main.72bc403f.css",
+    "static/js/main.143d15c3.js"
   ]
 }
