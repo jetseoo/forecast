@@ -1,5 +1,20 @@
+.secondary-left {
+  display: flex;
+  flex: 2 0 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+
 .details {
+  display: flex;
   position: relative;
+  width: 48%;
+  margin: 0;
+}
+
+.details:nth-child(-n + 2) {
+  margin-bottom: 30px;
 }
 
 .details .details-content::after {
@@ -32,4 +47,40 @@
 
 .details:nth-child(4) .details-content::after {
   background-image: url('../../assets/icons/sun.svg');
+}
+
+@media screen and (max-width: 1023px) {
+  .secondary-left {
+    flex: unset;
+    margin-bottom: 0px;
+    width: 48%;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .details:nth-child(-n + 2) {
+    margin-bottom: unset;
+  }
+
+  .details:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .secondary-left {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .details {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .details:last-child {
+    margin-bottom: 0;
+  }
 }

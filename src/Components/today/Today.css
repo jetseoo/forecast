@@ -1,6 +1,7 @@
 .today {
   flex: 3 0;
   max-height: 335px;
+  min-height: inherit;
   margin-right: 30px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,6 +9,12 @@
 
 .main-info {
   display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -57,9 +64,22 @@
 }
 
 .description {
+  max-width: 270px;
   margin-bottom: 10px;
   font-size: 14px;
-  color: darkgray;
+  text-align: start;
+}
+
+.more-temps {
+  display: flex;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.more-temps p {
+  display: flex;
 }
 
 .right {
@@ -69,10 +89,6 @@
 
 .sunrise {
   margin-right: 40px;
-}
-
-.feels-like {
-  margin-bottom: 5px;
 }
 
 .sunrise,
@@ -88,4 +104,127 @@
 .sunset::before {
   content: url('../../assets/icons/sunset.svg');
   width: 20px;
+}
+
+.popup-arrow {
+  display: none;
+}
+
+.mob-info-btn {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .today {
+    margin-right: 0;
+  }
+
+  .left {
+    margin-right: 15px;
+  }
+
+  .sunrise {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .today {
+    position: relative;
+    flex-direction: column;
+    margin-right: 0;
+    max-height: unset;
+  }
+
+  .left {
+    margin-right: unset;
+  }
+
+  .city {
+    font-size: 22px;
+  }
+
+  .country {
+    font-size: 14px;
+  }
+
+  .current {
+    font-size: 50px;
+    margin-top: 150px;
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    background-position-y: 10px;
+  }
+
+  .more-temps {
+    display: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .right {
+    display: none;
+  }
+
+  .mob-info-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    opacity: 40%;
+    background: transparent;
+    background-image: url('../../assets/icons/info.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .mob-wrapper {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .mob-info {
+    min-width: 180px;
+    padding: 10px 0;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .mob-more-temps {
+    margin: 20px 10px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  .mob-more-temps p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  .mob-info-temp {
+    display: inline-flex;
+    justify-content: flex-end;
+    min-width: 20px;
+  }
+
+  .mob-sun {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  .mob-info .sunrise {
+    margin-right: 0;
+  }
 }

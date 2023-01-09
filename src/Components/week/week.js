@@ -28,8 +28,8 @@ export const Week = () => {
                   <sup className="degree">&deg;</sup>
                 </p>
                 <p className="weekday-temps">
-                  {day.tempmax}
-                  <sup className="degree">&deg;</sup> - {day.tempmin}
+                  {day.tempmin}
+                  <sup className="degree">&deg;</sup> / {day.tempmax}
                   <sup className="degree">&deg;</sup>
                 </p>
               </div>

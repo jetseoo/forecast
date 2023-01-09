@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Header } from './Components/header';
-import { Card } from './Components/UI';
 import { Today } from './Components/today';
 import { Details } from './Components/details';
 import { Tomorrow } from './Components/tomorrow';
@@ -13,11 +12,11 @@ function App() {
   const { data } = useContext(DataContext);
 
   if (!data || Object.keys(data).length === 0) {
-    return <Card>Loading...</Card>;
+    return <div className="app">Loading...</div>;
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
 
       <main className="main">

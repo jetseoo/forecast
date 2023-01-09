@@ -15,6 +15,30 @@
 }
 
 .app-name {
-  color: #bbb;
+  color: #3a3c3d;
   font-size: 36px;
+}
+
+@media screen and (max-width: 1023px) {
+  .app-name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .header-form,
+  .city-input {
+    display: flex;
+    width: 90%;
+    min-width: 0;
+  }
+
+  .app-name {
+    font-size: 16px;
+  }
 }
